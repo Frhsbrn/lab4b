@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Collection</title>
+</head>
+<body>
+  <h1>Book Details</h1>
+  <div id="bookDetails">
+    <p id="firstBookTitle"></p>
+    <p id="secondBookAuthor"></p>
+    <p id="allGenres"></p>
+  </div>
+
+  <script>
+    // JSON data for the books
+    const books = [
+      {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "publicationYear": 1925,
+        "genres": ["Fiction", "Classics"]
+      },
+      {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "publicationYear": 1960,
+        "genres": ["Fiction", "Coming-of-Age"]
+      }
+    ];
+
+    // (a) Display the title of the first book
+    document.getElementById("firstBookTitle").textContent = `First Book Title: ${books[0].title}`;
+
+    // (b) Display the author of the second book
+    document.getElementById("secondBookAuthor").textContent = `Second Book Author: ${books[1].author}`;
+
+    // (c) Display the genres of all books
+    const allGenres = books.map(book => book.genres.join(", ")).join(" | ");
+    document.getElementById("allGenres").textContent = `Genres: ${allGenres}`;
+  </script>
+</body>
+</html>
